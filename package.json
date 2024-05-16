@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack --mode production",
+    "webpack": "export NODE_OPTIONS=--openssl-legacy-provider",
     "start": "webpack-dev-server --open --mode development",
     "cy:open": "cypress open"
   },
