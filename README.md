@@ -1,8 +1,10 @@
 # Start Project
+
 > npm install
 > npm start
 
 # Open Cypress Dashboard
+
 > npm run cy:open
 
 # e-Commerce
