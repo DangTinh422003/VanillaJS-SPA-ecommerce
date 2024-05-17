@@ -11,5 +11,6 @@ module.exports = defineConfig({
     videoCompression: 32,
     screenshotOnRunFailure: true,
     trashAssetsBeforeRuns: true,
+    reporter: "mochawesome",
   },
 });

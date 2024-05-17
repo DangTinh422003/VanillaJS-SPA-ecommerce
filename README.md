@@ -7,6 +7,12 @@
 
 > npm run cy:open
 
+# TESTING STEP
+
+> 1. npm run test-report
+> 2. npm run test-report:merge
+> 3. npm run test-report:build
+
 # e-Commerce
 
 Food Store, easy to buy any food of our menu.

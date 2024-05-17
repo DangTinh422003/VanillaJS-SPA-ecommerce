@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-17T09:37:23.588Z",
+    "end": "2024-05-17T09:37:25.341Z",
+    "duration": 1753,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "abf95124-8a17-4e37-9f1a-9f28c0616479",
+      "title": "",
+      "fullFile": "cypress/e2e/TC_04_RATING_FOOD.cy.js",
+      "file": "cypress/e2e/TC_04_RATING_FOOD.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "20311af4-6a15-4fcf-93df-2421e6c2edb1",
+          "title": "TC 04: Xem chi tiết và đánh giá sản phẩm",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1. Xem chi tiết và đánh giá sản phẩm CAFE",
+              "fullTitle": "TC 04: Xem chi tiết và đánh giá sản phẩm 1. Xem chi tiết và đánh giá sản phẩm CAFE",
+              "timedOut": null,
+              "duration": 1667,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"cafe{enter}\");\ncy.get(\".item-details\").click();\ncy.get(\".modal\").should(\"be.visible\");\ncy.get(\".modal .modal-info .modal-info-name\").should(\"have.text\", \"cafe\");\ncy.get(\".modal .modal-info .modal-info-price\").should(\"have.text\", \"$ 30\");\ncy.get(\"#likecounter\").then($likeCounter => {\n  const currentLikeCounter = parseInt($likeCounter.text(), 10);\n  const CLICK_COUNT = 10;\n  for (let i = 0; i < CLICK_COUNT; i++) {\n    cy.get('button[name=\"like11\"] > img').click();\n  }\n  cy.get(\"#likecounter\").should($newLikeCounter => {\n    const newLikeCounter = parseInt($newLikeCounter.text(), 10);\n    expect(newLikeCounter).to.equal(currentLikeCounter + CLICK_COUNT);\n  });\n});",
+              "err": {},
+              "uuid": "87b912a4-911f-4efd-9140-b3a4fadb4268",
+              "parentUUID": "20311af4-6a15-4fcf-93df-2421e6c2edb1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "87b912a4-911f-4efd-9140-b3a4fadb4268"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1667,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

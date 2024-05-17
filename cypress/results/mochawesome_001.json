@@ -1,0 +1,190 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 3,
+    "pending": 0,
+    "failures": 2,
+    "start": "2024-05-17T09:36:59.582Z",
+    "end": "2024-05-17T09:37:10.015Z",
+    "duration": 10433,
+    "testsRegistered": 5,
+    "passPercent": 60,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2b786b29-5776-45c5-9083-ccd301c1b33f",
+      "title": "",
+      "fullFile": "cypress/e2e/TC_02_FINDING_FOOD.cy.js",
+      "file": "cypress/e2e/TC_02_FINDING_FOOD.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e1a85b33-9b38-4d4d-a652-2c5eb8bd6e4c",
+          "title": "TC 02: Tìm kiếm đồ  ăn",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1. Tìm kiếm đồ ăn",
+              "fullTitle": "TC 02: Tìm kiếm đồ  ăn 1. Tìm kiếm đồ ăn",
+              "timedOut": null,
+              "duration": 534,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"cafe{enter}\");\ncy.get(\"h3.item-name\").should(\"have.text\", \"cafe\");",
+              "err": {},
+              "uuid": "11d8feee-290b-40da-b308-d827e972e487",
+              "parentUUID": "e1a85b33-9b38-4d4d-a652-2c5eb8bd6e4c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "2. Tìm kiếm đồ ăn không tồn tại",
+              "fullTitle": "TC 02: Tìm kiếm đồ  ăn 2. Tìm kiếm đồ ăn không tồn tại",
+              "timedOut": null,
+              "duration": 358,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"         {enter}\");\ncy.get(\".Error404 h2\").should(\"have.text\", \"Sin Resultados\");",
+              "err": {},
+              "uuid": "386d63b0-3895-4117-a0f4-ad4f07af5931",
+              "parentUUID": "e1a85b33-9b38-4d4d-a652-2c5eb8bd6e4c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "3. Tìm kiếm đồ ăn",
+              "fullTitle": "TC 02: Tìm kiếm đồ  ăn 3. Tìm kiếm đồ ăn",
+              "timedOut": null,
+              "duration": 283,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"cafe{enter}\");\ncy.get(\"h3.item-name\").should(\"have.text\", \"cafe\");",
+              "err": {},
+              "uuid": "9a4f45ec-38db-4d30-ae39-47f502f776e1",
+              "parentUUID": "e1a85b33-9b38-4d4d-a652-2c5eb8bd6e4c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "4. Tìm kiếm đồ ăn có thêm khoảng trắng đầu và cuối",
+              "fullTitle": "TC 02: Tìm kiếm đồ  ăn 4. Tìm kiếm đồ ăn có thêm khoảng trắng đầu và cuối",
+              "timedOut": null,
+              "duration": 4581,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"   cafe   {enter}\");\ncy.get(\"h3.item-name\").should(\"have.text\", \"cafe\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `h3.item-name`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `h3.item-name`, but never found it.\n    at Context.eval (webpack://spa-store/./cypress/e2e/TC_02_FINDING_FOOD.cy.js:23:27)",
+                "diff": null
+              },
+              "uuid": "9b8abb8c-c9a8-4a02-a92a-c597a15f1727",
+              "parentUUID": "e1a85b33-9b38-4d4d-a652-2c5eb8bd6e4c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "5. Tìm kiếm với UPPERCASE",
+              "fullTitle": "TC 02: Tìm kiếm đồ  ăn 5. Tìm kiếm với UPPERCASE",
+              "timedOut": null,
+              "duration": 4441,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"CAFE{enter}\");\ncy.get(\"h3.item-name\").should(\"have.text\", \"cafe\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `h3.item-name`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `h3.item-name`, but never found it.\n    at Context.eval (webpack://spa-store/./cypress/e2e/TC_02_FINDING_FOOD.cy.js:29:27)",
+                "diff": null
+              },
+              "uuid": "ef0ce65b-4a88-41e7-bc83-e32e2debd8f3",
+              "parentUUID": "e1a85b33-9b38-4d4d-a652-2c5eb8bd6e4c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "11d8feee-290b-40da-b308-d827e972e487",
+            "386d63b0-3895-4117-a0f4-ad4f07af5931",
+            "9a4f45ec-38db-4d30-ae39-47f502f776e1"
+          ],
+          "failures": [
+            "9b8abb8c-c9a8-4a02-a92a-c597a15f1727",
+            "ef0ce65b-4a88-41e7-bc83-e32e2debd8f3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10197,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,618 @@
+{
+  "stats": {
+    "suites": 6,
+    "tests": 17,
+    "passes": 14,
+    "pending": 0,
+    "failures": 3,
+    "testsRegistered": 17,
+    "passPercent": 82.3529411764706,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-05-17T09:36:53.530Z",
+    "end": "2024-05-17T09:37:41.834Z",
+    "duration": 48304
+  },
+  "results": [
+    {
+      "uuid": "2b786b29-5776-45c5-9083-ccd301c1b33f",
+      "title": "",
+      "fullFile": "cypress/e2e/TC_02_FINDING_FOOD.cy.js",
+      "file": "cypress/e2e/TC_02_FINDING_FOOD.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e1a85b33-9b38-4d4d-a652-2c5eb8bd6e4c",
+          "title": "TC 02: Tìm kiếm đồ  ăn",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1. Tìm kiếm đồ ăn",
+              "fullTitle": "TC 02: Tìm kiếm đồ  ăn 1. Tìm kiếm đồ ăn",
+              "timedOut": null,
+              "duration": 534,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"cafe{enter}\");\ncy.get(\"h3.item-name\").should(\"have.text\", \"cafe\");",
+              "err": {},
+              "uuid": "11d8feee-290b-40da-b308-d827e972e487",
+              "parentUUID": "e1a85b33-9b38-4d4d-a652-2c5eb8bd6e4c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "2. Tìm kiếm đồ ăn không tồn tại",
+              "fullTitle": "TC 02: Tìm kiếm đồ  ăn 2. Tìm kiếm đồ ăn không tồn tại",
+              "timedOut": null,
+              "duration": 358,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"         {enter}\");\ncy.get(\".Error404 h2\").should(\"have.text\", \"Sin Resultados\");",
+              "err": {},
+              "uuid": "386d63b0-3895-4117-a0f4-ad4f07af5931",
+              "parentUUID": "e1a85b33-9b38-4d4d-a652-2c5eb8bd6e4c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "3. Tìm kiếm đồ ăn",
+              "fullTitle": "TC 02: Tìm kiếm đồ  ăn 3. Tìm kiếm đồ ăn",
+              "timedOut": null,
+              "duration": 283,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"cafe{enter}\");\ncy.get(\"h3.item-name\").should(\"have.text\", \"cafe\");",
+              "err": {},
+              "uuid": "9a4f45ec-38db-4d30-ae39-47f502f776e1",
+              "parentUUID": "e1a85b33-9b38-4d4d-a652-2c5eb8bd6e4c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "4. Tìm kiếm đồ ăn có thêm khoảng trắng đầu và cuối",
+              "fullTitle": "TC 02: Tìm kiếm đồ  ăn 4. Tìm kiếm đồ ăn có thêm khoảng trắng đầu và cuối",
+              "timedOut": null,
+              "duration": 4581,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"   cafe   {enter}\");\ncy.get(\"h3.item-name\").should(\"have.text\", \"cafe\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `h3.item-name`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `h3.item-name`, but never found it.\n    at Context.eval (webpack://spa-store/./cypress/e2e/TC_02_FINDING_FOOD.cy.js:23:27)",
+                "diff": null
+              },
+              "uuid": "9b8abb8c-c9a8-4a02-a92a-c597a15f1727",
+              "parentUUID": "e1a85b33-9b38-4d4d-a652-2c5eb8bd6e4c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "5. Tìm kiếm với UPPERCASE",
+              "fullTitle": "TC 02: Tìm kiếm đồ  ăn 5. Tìm kiếm với UPPERCASE",
+              "timedOut": null,
+              "duration": 4441,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"CAFE{enter}\");\ncy.get(\"h3.item-name\").should(\"have.text\", \"cafe\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `h3.item-name`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `h3.item-name`, but never found it.\n    at Context.eval (webpack://spa-store/./cypress/e2e/TC_02_FINDING_FOOD.cy.js:29:27)",
+                "diff": null
+              },
+              "uuid": "ef0ce65b-4a88-41e7-bc83-e32e2debd8f3",
+              "parentUUID": "e1a85b33-9b38-4d4d-a652-2c5eb8bd6e4c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "11d8feee-290b-40da-b308-d827e972e487",
+            "386d63b0-3895-4117-a0f4-ad4f07af5931",
+            "9a4f45ec-38db-4d30-ae39-47f502f776e1"
+          ],
+          "failures": [
+            "9b8abb8c-c9a8-4a02-a92a-c597a15f1727",
+            "ef0ce65b-4a88-41e7-bc83-e32e2debd8f3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10197,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "32ca66a8-8a94-42c9-9c6e-ffae83495a1d",
+      "title": "",
+      "fullFile": "cypress/e2e/TC_03_PRODUCT_DETAIL.cy.js",
+      "file": "cypress/e2e/TC_03_PRODUCT_DETAIL.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f4f5beec-4b61-4807-806d-6b048c78812f",
+          "title": "TC 03: Tìm kiếm và xem chi tiết sản phẩm",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1. Xem chi tiết sản phẩm CAFE",
+              "fullTitle": "TC 03: Tìm kiếm và xem chi tiết sản phẩm 1. Xem chi tiết sản phẩm CAFE",
+              "timedOut": null,
+              "duration": 517,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"cafe{enter}\");\ncy.get(\".item-details\").click();\ncy.get(\".modal .modal-info .modal-info-name\").should(\"have.text\", \"cafe\");\ncy.get(\".modal .modal-info .modal-info-price\").should(\"have.text\", \"$ 30\");",
+              "err": {},
+              "uuid": "c17080fb-b72b-4834-9d64-75db72dc03d0",
+              "parentUUID": "f4f5beec-4b61-4807-806d-6b048c78812f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "2. Xem chi tiết sản phẩm ROSQUILLA",
+              "fullTitle": "TC 03: Tìm kiếm và xem chi tiết sản phẩm 2. Xem chi tiết sản phẩm ROSQUILLA",
+              "timedOut": null,
+              "duration": 452,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"rosquilla{enter}\");\ncy.get(\".item-details\").click();\ncy.get(\".modal .modal-info .modal-info-name\").should(\"have.text\", \"rosquilla\");\ncy.get(\".modal .modal-info .modal-info-price\").should(\"have.text\", \"$ 20\");",
+              "err": {},
+              "uuid": "2f26c02d-4f87-43ed-bd0e-9ab19b474c30",
+              "parentUUID": "f4f5beec-4b61-4807-806d-6b048c78812f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "2. Xem chi tiết sản phẩm không tồn tại",
+              "fullTitle": "TC 03: Tìm kiếm và xem chi tiết sản phẩm 2. Xem chi tiết sản phẩm không tồn tại",
+              "timedOut": null,
+              "duration": 4498,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"sushi{enter}\");\ncy.get(\".item-details\").click();\ncy.get(\".modal .modal-info .modal-info-name\").should(\"have.text\", \"Không tìm thấy sản phẩm\");\ncy.get(\".modal .modal-info .modal-info-price\").should(\"have.text\", \"\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.item-details`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.item-details`, but never found it.\n    at Context.eval (webpack://spa-store/./cypress/e2e/TC_03_PRODUCT_DETAIL.cy.js:24:7)",
+                "diff": null
+              },
+              "uuid": "fccd56b8-1683-4356-844a-12b520c288f3",
+              "parentUUID": "f4f5beec-4b61-4807-806d-6b048c78812f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c17080fb-b72b-4834-9d64-75db72dc03d0",
+            "2f26c02d-4f87-43ed-bd0e-9ab19b474c30"
+          ],
+          "failures": [
+            "fccd56b8-1683-4356-844a-12b520c288f3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5467,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "abf95124-8a17-4e37-9f1a-9f28c0616479",
+      "title": "",
+      "fullFile": "cypress/e2e/TC_04_RATING_FOOD.cy.js",
+      "file": "cypress/e2e/TC_04_RATING_FOOD.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "20311af4-6a15-4fcf-93df-2421e6c2edb1",
+          "title": "TC 04: Xem chi tiết và đánh giá sản phẩm",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1. Xem chi tiết và đánh giá sản phẩm CAFE",
+              "fullTitle": "TC 04: Xem chi tiết và đánh giá sản phẩm 1. Xem chi tiết và đánh giá sản phẩm CAFE",
+              "timedOut": null,
+              "duration": 1667,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"cafe{enter}\");\ncy.get(\".item-details\").click();\ncy.get(\".modal\").should(\"be.visible\");\ncy.get(\".modal .modal-info .modal-info-name\").should(\"have.text\", \"cafe\");\ncy.get(\".modal .modal-info .modal-info-price\").should(\"have.text\", \"$ 30\");\ncy.get(\"#likecounter\").then($likeCounter => {\n  const currentLikeCounter = parseInt($likeCounter.text(), 10);\n  const CLICK_COUNT = 10;\n  for (let i = 0; i < CLICK_COUNT; i++) {\n    cy.get('button[name=\"like11\"] > img').click();\n  }\n  cy.get(\"#likecounter\").should($newLikeCounter => {\n    const newLikeCounter = parseInt($newLikeCounter.text(), 10);\n    expect(newLikeCounter).to.equal(currentLikeCounter + CLICK_COUNT);\n  });\n});",
+              "err": {},
+              "uuid": "87b912a4-911f-4efd-9140-b3a4fadb4268",
+              "parentUUID": "20311af4-6a15-4fcf-93df-2421e6c2edb1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "87b912a4-911f-4efd-9140-b3a4fadb4268"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1667,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "5fe8e2f4-a78a-4e5a-af65-564293d94ef0",
+      "title": "",
+      "fullFile": "cypress/e2e/TC_05_BUYING_FOOD_IN_MODAL_DETAIL.cy.js",
+      "file": "cypress/e2e/TC_05_BUYING_FOOD_IN_MODAL_DETAIL.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f180756f-1245-40f3-bdd0-4265f0f963f1",
+          "title": "TC 05: Mua sản phẩm và kiểm tra giỏ hàng",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1. Xem chi tiết và mua sản phẩm CAFE",
+              "fullTitle": "TC 05: Mua sản phẩm và kiểm tra giỏ hàng 1. Xem chi tiết và mua sản phẩm CAFE",
+              "timedOut": null,
+              "duration": 1389,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"cafe{enter}\");\ncy.get(\".item-details\").click();\ncy.get(\".modal\").should(\"be.visible\");\ncy.get(\".modal-info-name\").should(\"have.text\", \"cafe\");\ncy.get(\".modal-info-price\").should(\"have.text\", \"$ 30\");\nconst CLICK_COUNT = 10;\nfor (let i = 0; i < CLICK_COUNT; i++) {\n  cy.get('button[name=\"bAddM21\"]').click();\n}\n// Lấy giá trị của .modal-info-price và tính tổng\ncy.get(\".modal-info-price\").then($price => {\n  const priceText = $price.text().trim();\n  const priceValue = parseFloat(priceText.replace(\"$\", \"\"));\n  const expectedTotal = priceValue * CLICK_COUNT;\n  // Kiểm tra giá trị tổng trong giỏ hàng\n  cy.get(\"#modalCartTotal\").should($cartTotal => {\n    const cartTotalText = $cartTotal.text().trim();\n    const cartTotalValue = parseFloat(cartTotalText.replace(\"$\", \"\"));\n    expect(cartTotalValue).to.equal(expectedTotal);\n  });\n});",
+              "err": {},
+              "uuid": "b3073a55-07c5-4698-9cad-e3bd86768434",
+              "parentUUID": "f180756f-1245-40f3-bdd0-4265f0f963f1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "2. Tăng số lượng rồi giảm số lượng",
+              "fullTitle": "TC 05: Mua sản phẩm và kiểm tra giỏ hàng 2. Tăng số lượng rồi giảm số lượng",
+              "timedOut": null,
+              "duration": 2862,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"cafe{enter}\");\ncy.get(\".item-details\").click();\ncy.get(\".modal\").should(\"be.visible\");\ncy.get(\".modal-info-name\").should(\"have.text\", \"cafe\");\ncy.get(\".modal-info-price\").should(\"have.text\", \"$ 30\");\nconst INCREASE_COUNT = 10;\nfor (let i = 0; i < INCREASE_COUNT; i++) {\n  cy.get('button[name=\"bAddM21\"]').click();\n}\nconst DECREASE_COUNT = 20;\nfor (let i = 0; i < DECREASE_COUNT; i++) {\n  cy.get('button[name=\"bAddM11\"]').click();\n}\nif (DECREASE_COUNT > INCREASE_COUNT) {\n  cy.get(\"#modalCartTotal\").should($cartTotal => {\n    const cartTotalText = $cartTotal.text().trim();\n    const cartTotalValue = parseFloat(cartTotalText.replace(\"$\", \"\"));\n    expect(cartTotalValue).to.equal(0);\n  });\n} else {\n  cy.get(\"#modalCartTotal\").should($cartTotal => {\n    const cartTotalText = $cartTotal.text().trim();\n    const cartTotalValue = parseFloat(cartTotalText.replace(\"$\", \"\"));\n    expect(cartTotalValue).to.be.greaterThan(0);\n  });\n}",
+              "err": {},
+              "uuid": "de5e3c18-90fe-4df8-83d6-35747b4932ad",
+              "parentUUID": "f180756f-1245-40f3-bdd0-4265f0f963f1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "3. Mua sản phẩm và kiểm tra giỏ hàng",
+              "fullTitle": "TC 05: Mua sản phẩm và kiểm tra giỏ hàng 3. Mua sản phẩm và kiểm tra giỏ hàng",
+              "timedOut": null,
+              "duration": 1390,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"cafe{enter}\");\ncy.get(\".item-details\").click();\ncy.get(\".modal\").should(\"be.visible\");\ncy.get(\".modal-info-name\").should(\"have.text\", \"cafe\");\ncy.get(\".modal-info-price\").should(\"have.text\", \"$ 30\");\nconst CLICK_COUNT = 10;\nfor (let i = 0; i < CLICK_COUNT; i++) {\n  cy.get('button[name=\"bAddM21\"]').click();\n}\n// Lấy giá trị của .modal-info-price và tính tổng\ncy.get(\".modal-info-price\").then($price => {\n  const priceText = $price.text().trim();\n  const priceValue = parseFloat(priceText.replace(\"$\", \"\"));\n  const expectedTotal = priceValue * CLICK_COUNT;\n  // Kiểm tra giá trị tổng trong giỏ hàng\n  cy.get(\"#modalCartTotal\").should($cartTotal => {\n    const cartTotalText = $cartTotal.text().trim();\n    const cartTotalValue = parseFloat(cartTotalText.replace(\"$\", \"\"));\n    expect(cartTotalValue).to.equal(expectedTotal);\n  });\n});\n// close modal\ncy.get(\"body\").click(\"topLeft\");\ncy.get(\".modal\").should(\"not.be.visible\");\n// click giỏ hàng\ncy.get(\".header-cart-title > img\").click();\ncy.url().should(\"include\", \"#/cart\");\ncy.get(\".cartContainer-details-text\").eq(0).should(\"have.text\", \"cafe\");",
+              "err": {},
+              "uuid": "77459a84-1940-4ae8-9ceb-da0b393a4311",
+              "parentUUID": "f180756f-1245-40f3-bdd0-4265f0f963f1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "4. Mua rồi tăng số lượng sản phẩm bên trong giỏ hàng",
+              "fullTitle": "TC 05: Mua sản phẩm và kiểm tra giỏ hàng 4. Mua rồi tăng số lượng sản phẩm bên trong giỏ hàng",
+              "timedOut": null,
+              "duration": 2722,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"input[name='searcher']\").type(\"cafe{enter}\");\n// click giỏ hàng\ncy.get(\":nth-child(1) > .item-btn > img\").click();\ncy.get(\".header-cart-title > img\").click();\ncy.url().should(\"include\", \"#/cart\");\ncy.wait(2000);\ncy.get(\".cartContainer-details-text\").eq(0).should(\"have.text\", \"cafe\");\nconst increaseAmount = 5;\ncy.get(`.cartContainer-oncart-counter`).invoke(\"val\").then(currentValue => {\n  const newValue = parseInt(currentValue) + increaseAmount;\n  cy.get(\".cartContainer-oncart-counter\").clear().type(`${newValue}{enter}`);\n});\n// Kiểm tra giá trị mới\ncy.get(\".cartContainer-oncart-counter\").should(\"have.value\", String(parseInt(1) + increaseAmount));",
+              "err": {},
+              "uuid": "fed75b9f-245b-4780-abb1-acd87df74262",
+              "parentUUID": "f180756f-1245-40f3-bdd0-4265f0f963f1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b3073a55-07c5-4698-9cad-e3bd86768434",
+            "de5e3c18-90fe-4df8-83d6-35747b4932ad",
+            "77459a84-1940-4ae8-9ceb-da0b393a4311",
+            "fed75b9f-245b-4780-abb1-acd87df74262"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8363,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "1a45c7e5-b407-405c-8983-a85d9eeb45d1",
+      "title": "",
+      "fullFile": "cypress/e2e/TC_06_CLEAR_ITEM_IN_CART.cy.js",
+      "file": "cypress/e2e/TC_06_CLEAR_ITEM_IN_CART.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6d7c248e-3278-4f24-a48c-657aab74d9bd",
+          "title": "TC 06: Clear giỏ hàng",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1. Mua rồi clear giỏ hàng",
+              "fullTitle": "TC 06: Clear giỏ hàng 1. Mua rồi clear giỏ hàng",
+              "timedOut": null,
+              "duration": 1132,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Open browser\ncy.visit(\"/\");\n// 2. Click add to cart and count the number of clicks\nlet counter = 0;\ncy.get(\"button.item-btn\").each(($el, index, $list) => {\n  cy.wrap($el).click();\n  counter++;\n}).then(() => {\n  cy.log(counter);\n  cy.get(\".header-cart-counter span\").eq(1).should(\"have.text\", `(${counter.toString()})`);\n});\n// 3. Clear cart\ncy.get(\".header-cart-title > img\").click();\ncy.url().should(\"include\", \"#/cart\");\ncy.get(\".cartActions-btn > img\").click();\ncy.get(\".cartContainer\").should(\"not.exist\");",
+              "err": {},
+              "uuid": "9546252f-20c1-4109-9253-69264b2d637e",
+              "parentUUID": "6d7c248e-3278-4f24-a48c-657aab74d9bd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9546252f-20c1-4109-9253-69264b2d637e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1132,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "5ecda0e8-52d6-4a32-96bf-e916595ee4ac",
+      "title": "",
+      "fullFile": "cypress/e2e/TC_01_BUYFOOD.cy.js",
+      "file": "cypress/e2e/TC_01_BUYFOOD.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0cebfc98-39a6-474a-8c2c-3b3190040b71",
+          "title": "TC 01: Chọn mua thức ăn và đồ uống",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1. Click mua tất cả đồ ăn",
+              "fullTitle": "TC 01: Chọn mua thức ăn và đồ uống 1. Click mua tất cả đồ ăn",
+              "timedOut": null,
+              "duration": 1088,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Open browser\ncy.visit(\"/\");\n// 2. Click add to cart and count the number of clicks\nlet counter = 0;\ncy.get(\"button.item-btn\").each(($el, index, $list) => {\n  cy.wrap($el).click();\n  counter++;\n}).then(() => {\n  cy.log(counter);\n  cy.get(\".header-cart-counter span\").eq(1).should(\"have.text\", `(${counter.toString()})`);\n});",
+              "err": {},
+              "uuid": "96b4aa9b-25fe-4e87-9b50-97612565e0f2",
+              "parentUUID": "0cebfc98-39a6-474a-8c2c-3b3190040b71",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "2. Thêm sản phẩm vào giỏ và kiểm tra số lượng và tổng tiền",
+              "fullTitle": "TC 01: Chọn mua thức ăn và đồ uống 2. Thêm sản phẩm vào giỏ và kiểm tra số lượng và tổng tiền",
+              "timedOut": null,
+              "duration": 642,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\nlet totalAmount = 0;\nlet itemCount = 0;\ncy.get(\".item\").each($el => {\n  const priceText = $el.find(\".item-price\").text();\n  const price = parseFloat(priceText.replace(/[^0-9.-]+/g, \"\"));\n  totalAmount += price;\n  itemCount++;\n  cy.wrap($el).find(\".item-btn\").click();\n}).then(() => {\n  cy.get(\".header-cart-counter span\").eq(1).should(\"have.text\", `(${itemCount.toString()})`);\n  cy.get(\".header-cart-total\").should(\"have.text\", `$${totalAmount.toFixed(0).toString()}`);\n});",
+              "err": {},
+              "uuid": "a0c71331-3f8e-4843-a6de-92f00f9bf06f",
+              "parentUUID": "0cebfc98-39a6-474a-8c2c-3b3190040b71",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "3. Chọn mua đồ ăn khuyến mãi",
+              "fullTitle": "TC 01: Chọn mua thức ăn và đồ uống 3. Chọn mua đồ ăn khuyến mãi",
+              "timedOut": null,
+              "duration": 485,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"a[href='#/promociones']\").click();\nlet totalAmount = 0;\nlet itemCount = 0;\ncy.get(\".item\").each($el => {\n  const priceText = $el.find(\".item-price\").text();\n  const price = parseFloat(priceText.replace(/[^0-9.-]+/g, \"\")); // Chuyển đổi giá từ text sang số\n  totalAmount += price;\n  itemCount++;\n  cy.wrap($el).find(\".item-btn\").click();\n}).then(() => {\n  cy.get(\".header-cart-counter span\").eq(1).should(\"have.text\", `(${itemCount.toString()})`);\n  cy.get(\".header-cart-total\").should(\"have.text\", `$${totalAmount.toFixed(0).toString()}`);\n});",
+              "err": {},
+              "uuid": "7eb5a4e3-9fbf-465e-bdfe-500c9563444e",
+              "parentUUID": "0cebfc98-39a6-474a-8c2c-3b3190040b71",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "96b4aa9b-25fe-4e87-9b50-97612565e0f2",
+            "a0c71331-3f8e-4843-a6de-92f00f9bf06f",
+            "7eb5a4e3-9fbf-465e-bdfe-500c9563444e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2215,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

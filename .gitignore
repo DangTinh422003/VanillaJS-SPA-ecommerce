@@ -1,2 +1,6 @@
 node_modules
 dist
+
+mochawesome-report
+cypress/videos
+cypress/screenshots
