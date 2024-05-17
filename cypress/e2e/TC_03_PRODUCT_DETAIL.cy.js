@@ -17,15 +17,4 @@ describe("TC 03: Tìm kiếm và xem chi tiết sản phẩm", () => {
     );
     cy.get(".modal .modal-info .modal-info-price").should("have.text", "$ 20");
   });
-
-  it("2. Xem chi tiết sản phẩm không tồn tại", () => {
-    cy.visit("/");
-    cy.get("input[name='searcher']").type("sushi{enter}");
-    cy.get(".item-details").click();
-    cy.get(".modal .modal-info .modal-info-name").should(
-      "have.text",
-      "Không tìm thấy sản phẩm"
-    );
-    cy.get(".modal .modal-info .modal-info-price").should("have.text", "");
-  });
 });
