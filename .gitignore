@@ -2,6 +2,7 @@ node_modules
 dist
 
 mochawesome-report
+cypress/results
 cypress/videos
 cypress/screenshots
-cypress/results
+cypress/mochawesome.json
