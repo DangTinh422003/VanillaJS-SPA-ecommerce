@@ -1,9 +1,9 @@
-import Header from "../templates/header";
-import Hero from "../templates/hero";
 import Cart from "../pages/cart";
-import Footer from "../templates/footer";
 import Error404 from "../pages/error404";
 import Home from "../pages/home";
+import Footer from "../templates/footer";
+import Header from "../templates/header";
+import Hero from "../templates/hero";
 import ResolveRoute from "../utils/resolveRoute";
 
 const routes = {

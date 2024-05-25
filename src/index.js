@@ -1,14 +1,14 @@
 import router from "./routes";
-import Search from "./utils/search";
-import ModalOpen from "./utils/modalOpen";
-import ModalClose from "./utils/modalClose";
 import AddCart from "./utils/addcart";
-import EmptyCart from "./utils/emptycart";
-import RemoveItem from "./utils/removeitem";
 import CounterCarItem from "./utils/countercartitem";
-import ModalLikes from "./utils/modalLikes";
-import ModalPhotos from "./utils/modalPhotos";
+import EmptyCart from "./utils/emptycart";
 import ModalAddMinus from "./utils/modalAddMinus";
+import ModalClose from "./utils/modalClose";
+import ModalLikes from "./utils/modalLikes";
+import ModalOpen from "./utils/modalOpen";
+import ModalPhotos from "./utils/modalPhotos";
+import RemoveItem from "./utils/removeitem";
+import Search from "./utils/search";
 
 let cartTotals = {
   counter: 0,

@@ -18,7 +18,7 @@
     "javascritp",
     "vanilla"
   ],
-  "author": "den velez den.velez@gmail.com",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.2",
